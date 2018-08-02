@@ -16,6 +16,8 @@ class Sopa:
         self.alto  = alto
         self.ancho = ancho
         self.palabras = []
+
+
     def palabra_rnd(self, string):
         nletras = len(string)
         if nletras > self.alto or nletras > self.ancho: return None
@@ -35,10 +37,13 @@ class Sopa:
         p = Palabra(string, direccion, inclinacion, ubicacion)
         return p
 
+    
     def hay_conflicto_con(self, pal):
         for p in self.palabras:
             if p.hay_conflicto(pal): return True
         return False
+
+    
     def add_palabras(self, str_lst):
         for s in str_lst:
             p = None
@@ -46,6 +51,7 @@ class Sopa:
                 p = self.palabra_rnd(s)
             self.palabras.append(p)
 
+            
     def at(self, fila, col):
         res = None
         for p in self.palabras:
@@ -53,6 +59,7 @@ class Sopa:
             if res is not None: break
         return res
 
+    
     def mostrar(self):
         for i in range(1, self.ancho + 1):
             line = [str(i)+ "\t"]
@@ -62,6 +69,7 @@ class Sopa:
                 else: line.append(at)
             print (" ".join(line))
 
+            
     def mostrar_rnd(self, ayuda = False):
         letras = string.ascii_uppercase
         #letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
