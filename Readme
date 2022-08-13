@@ -1,0 +1,8 @@
+Generador de sopas de letras.
+
+uso: main [-a] [-d NUMERO] [ARCHIVO]
+
+	-a Muestra como ayuda las palabras que estan en la sopa
+	-d Es el tamaño de la diagonal. El valor por defecto es 16
+	El ARCHIVO es el lugar donde se buscan las palabras. Si no hay
+	ningún archivo se buscan en stdin.
